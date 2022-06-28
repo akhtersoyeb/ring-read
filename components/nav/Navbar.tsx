@@ -79,7 +79,7 @@ export default function Navbar() {
             fontSize={'sm'}
             fontWeight={400}
             variant={'link'}
-            href={'#'}>
+            href={'/api/auth/login'}>
             Sign In
           </Button>
           <Button
