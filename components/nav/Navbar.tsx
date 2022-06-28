@@ -14,6 +14,7 @@ import {
   useColorModeValue,
   useBreakpointValue,
   useDisclosure,
+  Center,
 } from '@chakra-ui/react';
 
 import {
@@ -27,17 +28,21 @@ export default function Navbar() {
   const { isOpen, onToggle } = useDisclosure();
 
   return (
-    <Box>
+    <Box
+      borderBottom={1}
+      borderStyle={'solid'}
+      borderColor={useColorModeValue('gray.200', 'gray.900')}
+    >
       <Flex
         bg={useColorModeValue('white', 'gray.800')}
         color={useColorModeValue('gray.600', 'white')}
+        maxW={'7xl'}
         minH={'60px'}
+        mx={'auto'}
         py={{ base: 2 }}
         px={{ base: 4 }}
-        borderBottom={1}
-        borderStyle={'solid'}
-        borderColor={useColorModeValue('gray.200', 'gray.900')}
-        align={'center'}>
+        align={'center'}
+      >
         <Flex
           flex={{ base: 1, md: 'auto' }}
           ml={{ base: -2 }}
@@ -56,10 +61,10 @@ export default function Navbar() {
             textAlign={useBreakpointValue({ base: 'center', md: 'left' })}
             fontFamily={'heading'}
             color={useColorModeValue('gray.800', 'white')}>
-            Logo
+            Ring Read
           </Text>
 
-          <Flex display={{ base: 'none', md: 'flex' }} ml={10}>
+          <Flex flex={1} justify={'center'} display={{ base: 'none', md: 'flex' }} ml={10}>
             <DesktopNav />
           </Flex>
         </Flex>
@@ -252,41 +257,46 @@ interface NavItem {
 
 const NAV_ITEMS: Array<NavItem> = [
   {
-    label: 'Inspiration',
+    label: 'Explore',
     children: [
       {
-        label: 'Explore Design Work',
-        subLabel: 'Trending Design to inspire you',
+        label: 'Articles',
+        subLabel: 'Trending Articles to inspire you',
         href: '#',
       },
       {
-        label: 'New & Noteworthy',
-        subLabel: 'Up-and-coming Designers',
+        label: 'Writers Testimony',
+        subLabel: 'Find out what our writers thinks about us',
+        href: '#',
+      },
+      {
+        label: 'Freelance Writing Projects',
+        subLabel: 'An exclusive list for contract writing',
         href: '#',
       },
     ],
   },
   {
-    label: 'Find Work',
+    label: 'For Writers',
     children: [
       {
-        label: 'Job Board',
-        subLabel: 'Find your dream design job',
+        label: 'Membership Program',
+        subLabel: 'Find out ',
         href: '#',
       },
       {
-        label: 'Freelance Projects',
-        subLabel: 'An exclusive list for contract work',
+        label: 'Earning Methods',
+        subLabel: 'Affiliate, partnership program and more',
         href: '#',
-      },
+      }
     ],
   },
   {
-    label: 'Learn Design',
+    label: 'Pricing',
     href: '#',
   },
   {
-    label: 'Hire Designers',
+    label: 'Contact',
     href: '#',
   },
 ];
