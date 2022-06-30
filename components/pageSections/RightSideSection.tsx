@@ -8,6 +8,8 @@ import {
 import { SearchIcon } from "@chakra-ui/icons";
 import SearchBar from "../forms/SearchBar";
 import Topics from "./Topics";
+import { SmallAuthorCard } from "../cards/AuthorCard";
+import { SmallAuthorContainer } from "../containers/AuthorContainer";
 
 const DemoTopics: string[] = [
   'Tech',
@@ -45,6 +47,8 @@ export default function RightSideSection() {
         <SearchBar />
 
         <Topics title="Recommended Topics" topics={DemoTopics} />
+
+        <SmallAuthorContainer />
 
       </VStack>
     </Box>

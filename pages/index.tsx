@@ -2,7 +2,7 @@ import { useUser } from '@auth0/nextjs-auth0';
 
 import type { NextPage } from 'next'
 
-import ArticleContainer from '../components/pageSections/ArticleContainer';
+import ArticleContainer from '../components/containers/ArticleContainer';
 import Contact from '../components/forms/Contact'
 import Features from '../components/pageSections/Features'
 import Footer from '../components/nav/Footer'

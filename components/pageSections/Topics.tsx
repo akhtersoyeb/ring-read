@@ -15,6 +15,8 @@ export default function Topics(props: ITopics) {
         {props.topics.map((topic) => (
           <WrapItem>
             <Button
+              bg={'gray.200'}
+              _hover={{ bg: 'gray.300' }}
               fontWeight={'normal'}
               fontSize={'sm'}
             >{topic}</Button>
