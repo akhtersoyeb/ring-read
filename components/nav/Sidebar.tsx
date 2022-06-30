@@ -222,7 +222,11 @@ const MobileNav = ({ onOpen, ...rest }: MobileProps) => {
               <MenuItem>Payment</MenuItem>
               <MenuItem>Settings</MenuItem>
               <MenuDivider />
-              <MenuItem>Sign out</MenuItem>
+              <MenuItem><Link
+                href='/api/auth/logout'
+                style={{ textDecoration: 'none' }}
+                _focus={{ boxShadow: 'none' }}
+              >Sign Out</Link></MenuItem>
             </MenuList>
           </Menu>
         </Flex>
