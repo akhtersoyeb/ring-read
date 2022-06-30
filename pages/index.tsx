@@ -9,6 +9,9 @@ import Hero from '../components/pageSections/Hero'
 import Navbar from '../components/nav/Navbar'
 import Pricing from '../components/pageSections/Pricing'
 import Sidebar from '../components/nav/Sidebar';
+import ArticleCard from '../components/cards/ArticleCard';
+
+import * as articleData from '../data/articles.json'
 
 const Home: NextPage = () => {
 
@@ -17,7 +20,7 @@ const Home: NextPage = () => {
   if (isLoading) return <div>Loading...</div>;
   if (error) return <div>{error.message}</div>;
 
-  console.log(user)
+
 
   if (user) {
     return (
@@ -26,7 +29,16 @@ const Home: NextPage = () => {
         {/* Sidebar with header */}
         <Sidebar>
 
-          {/* Main Content */}
+          <ArticleCard
+            authorPictureSrc={articleData[0].authorPictureSrc}
+            authorName={articleData[0].authorName}
+            date={articleData[0].date}
+            title={articleData[0].title}
+            seoText={articleData[0].seoText}
+            coverPictureSrc={articleData[0].coverPictureSrc}
+            tags={articleData[0].tags}
+          />
+
 
           {/* Extra Content */}
 
