@@ -81,7 +81,7 @@ const ArticleCard: React.FC<IArticleCard> = (props) => {
           marginTop={{ base: '3', sm: '0' }}>
           <BlogAuthor imgSrc={props.authorPictureSrc} name={props.authorName} date={props.date} />
 
-          <Heading marginTop="1">
+          <Heading marginTop="1" size={'md'}>
             <Link textDecoration="none" _hover={{ textDecoration: 'none' }}>
               {props.title}
             </Link>
@@ -90,7 +90,7 @@ const ArticleCard: React.FC<IArticleCard> = (props) => {
             as="p"
             marginTop="2"
             color={useColorModeValue('gray.700', 'gray.200')}
-            fontSize="lg"
+            fontSize="sm"
             noOfLines={{ base: 2, lg: 3 }}>
             {props.seoText}
           </Text>

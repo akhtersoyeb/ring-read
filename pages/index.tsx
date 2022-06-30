@@ -2,6 +2,7 @@ import { useUser } from '@auth0/nextjs-auth0';
 
 import type { NextPage } from 'next'
 
+import ArticleContainer from '../components/pageSections/ArticleContainer';
 import Contact from '../components/forms/Contact'
 import Features from '../components/pageSections/Features'
 import Footer from '../components/nav/Footer'
@@ -9,9 +10,12 @@ import Hero from '../components/pageSections/Hero'
 import Navbar from '../components/nav/Navbar'
 import Pricing from '../components/pageSections/Pricing'
 import Sidebar from '../components/nav/Sidebar';
-import ArticleCard from '../components/cards/ArticleCard';
+import RightSideSection from '../components/pageSections/RightSideSection';
 
-import * as articleData from '../data/articles.json'
+
+import { Grid, HStack, Stack } from '@chakra-ui/react';
+
+
 
 const Home: NextPage = () => {
 
@@ -29,18 +33,18 @@ const Home: NextPage = () => {
         {/* Sidebar with header */}
         <Sidebar>
 
-          <ArticleCard
-            authorPictureSrc={articleData[0].authorPictureSrc}
-            authorName={articleData[0].authorName}
-            date={articleData[0].date}
-            title={articleData[0].title}
-            seoText={articleData[0].seoText}
-            coverPictureSrc={articleData[0].coverPictureSrc}
-            tags={articleData[0].tags}
-          />
+          <Stack
+            spacing={'20px'}
+            direction={'row'}>
+
+            <ArticleContainer />
 
 
-          {/* Extra Content */}
+            {/* Extra Content */}
+            <RightSideSection />
+
+          </Stack>
+
 
           {/* Footer */}
         </Sidebar>
