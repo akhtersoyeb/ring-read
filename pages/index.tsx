@@ -1,14 +1,31 @@
+import type { NextPage } from "next";
 
-import type { NextPage } from 'next'
-
-
-import Footer from '../components/nav/Footer';
-import Hero from '../components/pageSections/Hero'
-
-
+import Footer from "../components/nav/Footer";
+import Hero from "../components/pageSections/Hero";
+import Sidebar from "../components/nav/Sidebar";
 
 const Home: NextPage = () => {
-  const origin = "localhost:3000"
+  const origin = "localhost:3000";
+  const loggedIn = true;
+
+  if (loggedIn) {
+    return (
+      <>
+        <Sidebar>
+          <div className="flex flex-col gap-4">
+            <div className="w-full h-52 bg-red-200"></div>
+            <div className="w-full h-52 bg-red-200"></div>
+            <div className="w-full h-52 bg-red-200"></div>
+            <div className="w-full h-52 bg-red-200"></div>
+            <div className="w-full h-52 bg-red-200"></div>
+            <div className="w-full h-52 bg-red-200"></div>
+          </div>
+        </Sidebar>
+      </>
+    );
+  }
+
+  // If the user is not logged in
   return (
     <>
       <div className="flex flex-col min-h-screen">
@@ -16,30 +33,26 @@ const Home: NextPage = () => {
         <div className="flex-1">
           <Intro />
           <GettingStarted origin={origin} />
-          
         </div>
         <Footer />
       </div>
-
     </>
-  )
-}
-
+  );
+};
 
 function Intro() {
-  const title = "py-4 text-4xl text-gray-900 text-center sm:tracking-tight font-extrabold";
+  const title =
+    "py-4 text-4xl text-gray-900 text-center sm:tracking-tight font-extrabold";
 
   return (
-    <section
-      className="max-w-screen-sm mx-auto my-16 px-4 sm:px-6 md:px-8 space-y-4"
-    >
+    <section className="max-w-screen-sm mx-auto my-16 px-4 sm:px-6 md:px-8 space-y-4">
       <picture>
         <img
-          src="/laptop-graphic.png"
+          src="/hello-graphic.png"
           className="w-64 mx-auto"
           width={800}
           height={678}
-          alt="deno is drinking fresh lemon squash"
+          alt="unable to load graphic"
         />
       </picture>
 
@@ -84,9 +97,7 @@ function Intro() {
 
 function GettingStarted(props: { origin: string }) {
   return (
-    <section
-      className="max-w-screen-sm mx-auto my-16 px-4 sm:px-6 md:px-8 space-y-4"
-    >
+    <section className="max-w-screen-sm mx-auto my-16 px-4 sm:px-6 md:px-8 space-y-4">
       <h2 id="getting-started" className="text-xl text-gray-600 font-bold">
         <a href="#getting-started" className="hover:underline">
           Getting started
@@ -130,8 +141,4 @@ function GettingStarted(props: { origin: string }) {
   );
 }
 
-
-
-
-
-export default Home
+export default Home;

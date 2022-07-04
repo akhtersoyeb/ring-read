@@ -1,4 +1,3 @@
-
 const LINKS = [
   {
     title: "Source",
@@ -15,15 +14,17 @@ const LINKS = [
 ];
 
 export default function Footer() {
-  const footer = "border-t-2 border-gray-200 bg-gray-100 h-32 flex flex-col gap-4 justify-center";
-  const inner = "mx-auto max-w-screen-lg flex items-center justify-center gap-8";
+  const footer =
+    "border-t-2 border-gray-200 bg-gray-100 h-32 flex flex-col gap-4 justify-center";
+  const inner =
+    "mx-auto max-w-screen-lg flex items-center justify-center gap-8";
   const linkStyle = "text-gray-600 hover:underline";
   const copyright = "text-gray-600 text-center";
   return (
     <footer className={footer}>
       <div className={inner}>
         {LINKS.map((link) => (
-          <a href={link.href} className={linkStyle}>
+          <a href={link.href} className={linkStyle} key={link.title}>
             {link.title}
           </a>
         ))}

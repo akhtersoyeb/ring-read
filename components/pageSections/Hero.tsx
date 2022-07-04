@@ -1,13 +1,13 @@
 import DropEffect from "./DropEffect";
 
-
 export default function Hero() {
-
-  
   return (
     <>
       <div className="flex justify-end items-center bg-rose-300">
-        <a href="#" className="border border-black inline-flex items-center h-10 px-4 m-4 text-black bg-transparent rounded hover:bg-white">
+        <a
+          href="#"
+          className="border border-black inline-flex items-center h-10 px-4 m-4 text-black bg-transparent rounded hover:bg-white"
+        >
           Login
         </a>
       </div>
@@ -17,4 +17,3 @@ export default function Hero() {
     </>
   );
 }
-
